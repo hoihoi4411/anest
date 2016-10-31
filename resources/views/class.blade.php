@@ -10,7 +10,7 @@
                     @endif
                     <div class="row">
                         <div class="col-md-4">
-                            <img src="./img/{{$classe->img}}.jpg" alt="{!! $classe->name !!}" class="img-thumbnail">
+                            <img src="{{url('/uploads/images/'.$classe->img)}}" alt="{!! $classe->name !!}" class="img-thumbnail">
                         </div>
                         <div class="col-md-8">
                             <h3 class="column_title"><a href="/khoa-hoc/ios">{!! $classe->name !!}</a></h3>
@@ -35,7 +35,7 @@
 
                         </div>
                         <div class="col-md-4">
-                            <img src="./img/{{$classe->img}}.jpg" alt="{!! $classe->name !!}" class="img-thumbnail">
+                            <img src="{{url('/uploads/images/'.$classe->img)}}" alt="{!! $classe->name !!}" class="img-thumbnail">
                         </div>
 
                     </div>

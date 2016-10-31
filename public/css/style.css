@@ -544,7 +544,10 @@ img { max-width: 100%; }
     width: 75%;
     padding-top: 25px;
 }
-
+.logo{
+    width: 150px;
+    margin-top: -14px;
+}
 .form-top-left h3 { margin-top: 0; color: #fff; }
 .form-top-left p { opacity: 0.8; color: #fff; }
 
