@@ -1,24 +1,8 @@
 @include('layouts.header')
         <!-- Main jumbotron for a primary marketing message or call to action -->
-<div class="jumbotron jeducation">
-    <div class="container">
-        <div class="row">
-            <
-            <div class="col-md-12 jtitle">
-                <h1>_____Tổ kiến_____</h1>
-
-                <h1>Vừa học vừa chơi</h1>
-            </div>
-
-        </div>
-    </div>
-</div>
-
 <div class="container jClass">
     <div class="row">
         @foreach($classes as $classe)
-
-
             @if($classe->id%2 ==1)
                 <div class="col-md-12">
                     @if($classe->id != 1)

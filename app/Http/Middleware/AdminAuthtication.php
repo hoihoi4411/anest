@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Support\Facades\Auth;
 
 class AdminAuthtication
 {
@@ -15,6 +16,9 @@ class AdminAuthtication
      */
     public function handle($request, Closure $next)
     {
-        return $next($request);
+        if (!Auth::guest() && Auth::user()->permission == 1) {
+            return $next($request);
+        }
+        return redirect('/home');
     }
 }

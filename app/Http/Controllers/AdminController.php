@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Contact;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class ContactController extends Controller
+class AdminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,27 +14,38 @@ class ContactController extends Controller
      */
     public function index()
     {
-        $contacts =  DB::table('contact')->get();
-        return view('admin.adminContact', ['contacts' => $contacts]);
+        return redirect('/admincp/user');
     }
 
+    public function indexUser()
+    {
+        $users = DB::table('users')->get();
+        return view('admin.adminUser', ['users' => $users]);
+    }
+
+    public function indexClass()
+    {
+        return view('admin.adminClass');
+    }
+
+    public function indexContact()
+    {
+        return view('admin.adminContact');
+    }
+
+    public function addNewUser()
+    {
+        return view('admin.adminAddNewUser');
+    }
 
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
-        $errors = $this->validate($request, [
-            'email' => 'required|email|max:255|unique:contact',
-            'message' => 'required|min:6',
-        ]);
-        if (count($errors) <= 0) {
-            $this->store($request);
-        }
-        return view('contact');
-
+        //
     }
 
     /**
@@ -46,11 +56,7 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-
-        return Contact::create([
-            'email' => $request['email'],
-            'text' => $request['message']
-        ]);
+        //
     }
 
     /**

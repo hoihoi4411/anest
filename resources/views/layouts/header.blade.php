@@ -24,19 +24,13 @@
             <a class="navbar-brand logo" href="./">anest</a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li class="@if(isset($active_home)) {{$active_home}} @endif"><a href="./">Trang chủ<span class="sr-only">(current)</span></a></li>
-                <li class="@if(isset($active_class)) {{$active_class}} @endif"><a href="./khoa-hoc">Khóa học</a></li>
-                <li class="@if(isset($active_contact)) {{$active_contact}} @endif"><a href="./lien-he">Liên hệ</a></li>
-            </ul>
             <ul class="nav navbar-nav navbar-right">
                 @if (Route::has('login'))
 
                     @if (Auth::check())
                         <li><a href="{{ url('/home') }}" >Home</a></li>
                     @else
-                        <li class="btn-bt"><a href="{{ url('/login') }}" class="btn btn-success">Login</a></li>
-                        <li class="btn-bt">  <a href="{{ url('/register') }}" class="btn btn-primary">Register</a></li>
+                        <li class="btn-bt"><a href="{{ url('/login') }}" class="btn btn-white">Đăng nhập</a></li>
                     @endif
 
                 @endif
